@@ -16,44 +16,44 @@ h2. Usage
 So far plugin should be called on a '''single element'''. Why? Because it stores data information in this node.
 Maybe in the future it will be changed and extended for usage with many elements.
 
-===General scheme of usage===
-'''$("#website_fanpage_url").fbsearch({
-::busy : {
-::::BUSY OPTIONS
-::},
-::autocomplete : {
-::::JQUERY UI AUTOCOMPLETE OPTIONS
-::},
-::FB SEARCH OPTIONS
-});'''
+General scheme of usage
+$("#website_fanpage_url").fbsearch({
+  busy : {
+    BUSY OPTIONS
+  },
+  autocomplete : {
+    JQUERY UI AUTOCOMPLETE OPTIONS
+  },
+  FB SEARCH OPTIONS
+});
 
-===General scheme of usage 2===
-'''$("#website_fanpage_url").fbsearch("OPTION");'''
+General scheme of usage 2
+$("#website_fanpage_url").fbsearch("OPTION");
 
-===Overriding default options for all instances of FBSearch===
-'''$("#website_fanpage_url").fbsearch("defaults", { FB SEARCH OPTIONS });''' - default options for FBSearch
+Overriding default options for all instances of FBSearch
+$("#website_fanpage_url").fbsearch("defaults", { FB SEARCH OPTIONS }); - default options for FBSearch
 
-'''$("#website_fanpage_url").fbsearch("autocomplete-defaults", { JQUERY UI AUTOCOMPLETE OPTIONS });''' - default options for jQuery UI Autocomplete used in FBSearch
+$("#website_fanpage_url").fbsearch("autocomplete-defaults", { JQUERY UI AUTOCOMPLETE OPTIONS }); - default options for jQuery UI Autocomplete used in FBSearch
 
-'''$("#website_fanpage_url").fbsearch("busy-defaults", { BUSY OPTIONS });''' - default options for jQuery-busy used in FBSearch
+$("#website_fanpage_url").fbsearch("busy-defaults", { BUSY OPTIONS }); - default options for jQuery-busy used in FBSearch
 
 Changing default options for external plugins (such as jQuery UI Autocomplete and jQuery-busy) doesn't affect its settings outside the FBSearch.
 
-===Terminating search===
-'''$("#website_fanpage_url").fbsearch("cancel");'''
+Terminating search
+$("#website_fanpage_url").fbsearch("cancel");
 
-===Fetching information===
+Fetching information
 You can fetch information about searched fanpage directly from element which was FBSearch called on.
 
-'''$("#website_fanpage_url").fbsearch("likes");''' - it returns information about fanpage's likes stored with $.data.
+$("#website_fanpage_url").fbsearch("likes"); - it returns information about fanpage's likes stored with $.data.
 
 Instead of "likes" you can use one of the belowed options as well:
-"name", "url", "category", "facebook_id", "image_url", "state"
+"name", "url", "category", "facebook_id", "image_url", "state" (name of autocomplete's function last called)
 
-===Without options
+Without options
 You can also call plugin without options like:
 
-'''$("#website_fanpage_url").fbsearch();'''
+$("#website_fanpage_url").fbsearch();
 
 then plugin will use only default settings.
 
@@ -61,9 +61,9 @@ h2. BUSY OPTIONS
 
 Exactly those options which you can use in jQuery-busy plus you can specify which object should be used as busy one (image option)
 
-===Default options:===
-'''::position : "center",'''
-'''::img : "/busy-facebook-search.gif"'''
+Default options
+  position : "center",
+  img : "/busy-facebook-search.gif"
 
 On default as busy element is used icon specified in FB SEARCH OPTIONS (if any)
 

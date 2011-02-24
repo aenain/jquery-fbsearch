@@ -3,6 +3,7 @@ h1. FBSearch
 FBSearch is a jQuery plugin which allows to have advantages of FB API and Autocomplete in one place.
 It sets certain informations in appropriate nodes and stores them also with $.data in the search node. 
 I started to write this plugin basing on kammerer's Facebook Search and would like to thank him :)
+So far it can search only fanpages. Tested on IE6, IE8, Chrome 9, Firefox 3, Opera 11.
 
 h2. Install
 

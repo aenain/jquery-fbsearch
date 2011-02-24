@@ -412,7 +412,7 @@
   }
 
   $.fn.fbsearch = function(options, defaults) {
-    if ($.inArray(options, ["name", "url", "likes", "category", "facebook_id", "image_url", "state", "cancel"]) != -1) {
+    if ($.inArray(options, ["name", "url", "likes", "category", "facebook_id", "image_url", "state"]) != -1) {
       return $.data($(this)[0], "fb-search-" + options);
     }
     else if (options == "defaults") {

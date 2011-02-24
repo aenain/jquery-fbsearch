@@ -1,0 +1,73 @@
+h1. FBSearch
+
+FBSearch is a jQuery plugin which allows to have advantages of FB API and Autocomplete in one place.
+I started to write this plugin basing on kammerer's Facebook Search and would like to thank him :)
+
+h2. Install
+
+It can be used just like any other jQuery plugin, but also FB API (Javascript SDK) and jQuery UI Autocomplete are required.
+Kammerer's jQuery-busy is optional.
+
+h2. USage
+
+$("#website_fanpage_url").fbsearch({
+  busy : {
+    BUSY OPTIONS
+  },
+  autocomplete : {
+    JQUERY UI AUTOCOMPLETE OPTIONS
+  },
+  FB SEARCH OPTIONS
+});
+
+You can also use it without options like:
+$("#website_fanpage_url").fbsearch();
+
+then plugin will use only default settings.
+
+h2. BUSY OPTIONS
+
+Exactly those options which you can use in jQuery-busy plus you can specify which object should be used as busy one (image option)
+
+Default options:
+position : "center",
+img : "/busy-facebook-search.gif"
+
+On default as busy element is used icon specified in FB SEARCH OPTIONS (if any)
+
+h2. JQUERY UI AUTOCOMPLETE OPTIONS
+
+The same options which you can use in jQuery UI Autocomplete, but if you would like to use your own eg. select function default will be executed and then yours.
+
+Default options:
+minLength : 1,
+delay : 100
+
+List of functions which will be executed right after default one is done:
+search, select, change, focus, open, close.
+
+Function source can't be changed.
+
+h2. FB SEARCH OPTIONS
+
+img - path to image which will be used as (or instead of) facebook icon (default is "/facebook-search-icon.png")
+result - type of result which will be in search input. I mean attribute of searched fanpage. Possible values: "url", "name" (default)
+limit - how many search results should be displayed (default is 10)
+start_with_icon - if plugin, when called, should on initialization set icon (default is false)
+icon - element which should be your icon
+image - element which should be used to set a fanpage's image (on default it's icon - if any). It should be an image tag.
+facebook_id - element which should be used to set a fanpage's facebook_id. It should be a form field.
+url - element which should be used to set a fanpage's url. It should be a form field.
+name - element which should be used to set a fanpage's name. It should be a form field.
+image_url - element which should be used to set a fanpage's image url. It should be a form field.
+link - element which should be used as link to a fanpage. It should be a link.
+
+You can specify above elements as string (selector for jQuery) or jQuery element.
+
+You can specify also prefix to match above elements against eg. :
+$("#website_fanpage_url").fbsearch({ prefix: "website" });
+
+then plugin will try to match other elements against the pattern: prefix + "_" + name of an fanpage's attribute (listed above)
+
+You can also use both methods: matching against the pattern with prefix and explicitly set any of element (icon, image, facebook_id, url, name, image_url, link).
+Plugin tries to match elements set explicitly and then tries to match against pattern with prefix. If some elements are set explicitly, they won't be matching against pattern.

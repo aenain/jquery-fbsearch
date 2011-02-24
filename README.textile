@@ -71,3 +71,9 @@ then plugin will try to match other elements against the pattern: prefix + "_" +
 
 You can also use both methods: matching against the pattern with prefix and explicitly set any of element (icon, image, facebook_id, url, name, image_url, link).
 Plugin tries to match elements set explicitly and then tries to match against pattern with prefix. If some elements are set explicitly, they won't be matching against pattern.
+
+h2. What plugin doesn't do?
+
+Plugin doesn't use any internal CSS, you have to specify it on your own.
+Plugin doesn't contain neither jQuery UI Autocomplete javascript nor Facebook API.
+It doesn't contain jQuery-busy as well.

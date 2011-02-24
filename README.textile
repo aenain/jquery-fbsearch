@@ -1,6 +1,7 @@
 h1. FBSearch
 
 FBSearch is a jQuery plugin which allows to have advantages of FB API and Autocomplete in one place.
+It sets certain informations in appropriate nodes and stores them also with $.data in the search node. 
 I started to write this plugin basing on kammerer's Facebook Search and would like to thank him :)
 
 h2. Install
@@ -8,7 +9,10 @@ h2. Install
 It can be used just like any other jQuery plugin, but also FB API (Javascript SDK) and jQuery UI Autocomplete are required.
 Kammerer's jQuery-busy is optional.
 
-h2. USage
+h2. Usage
+
+So far plugin should be called on a single element. Why? Because it stores data information in this node.
+Maybe in the future it will be changed and extended for usage with many elements.
 
 $("#website_fanpage_url").fbsearch({
   busy : {
@@ -19,6 +23,21 @@ $("#website_fanpage_url").fbsearch({
   },
   FB SEARCH OPTIONS
 });
+
+$("#website_fanpage_url").fbsearch("cancel"); - you can terminate search.
+
+You can override default options for all instances of fbsearch:
+ 
+$("#website_fanpage_url").fbsearch("defaults", { FB SEARCH OPTIONS }) - default options for FBSearch
+$("#website_fanpage_url").fbsearch("autocomplete-defaults", { JQUERY UI AUTOCOMPLETE OPTIONS }) - default options for jQuery UI Autocomplete used in FBSearch
+$("#website_fanpage_url").fbsearch("busy-defaults", { BUSY OPTIONS }) - default options for jQuery-busy used in FBSearch
+
+Changing default options for external plugins (such as jQuery UI Autocomplete and jQuery-busy) doesn't affect its settings outside the FBSearch. 
+
+You can fetch information about searched fanpage directly from element which was FBSearch called on.
+$("#website_fanpage_url").fbsearch("likes") - it returns information about fanpage's likes stored with $.data.
+Instead of "likes" you can use one of the belowed options as well:
+"name", "url", "category", "facebook_id", "image_url", "state"
 
 You can also use it without options like:
 $("#website_fanpage_url").fbsearch();
@@ -77,3 +96,8 @@ h2. What plugin doesn't do?
 Plugin doesn't use any internal CSS, you have to specify it on your own.
 Plugin doesn't contain neither jQuery UI Autocomplete javascript nor Facebook API.
 It doesn't contain jQuery-busy as well.
+
+h2. What you should remember about?
+
+When calling plugin with options, don't forget about curly braces inside parenthesis.
+If you only want to fetch some information (eg. likes), in parenthesis write only certain string (eg. "likes").

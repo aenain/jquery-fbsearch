@@ -81,7 +81,7 @@ name - element which should be used to set a fanpage's name. It should be a form
 image_url - element which should be used to set a fanpage's image url. It should be a form field.
 link - element which should be used as link to a fanpage. It should be a link.
 
-You can specify above elements as string (selector for jQuery) or jQuery element.
+You can specify any of the aboved elements as string (selector for jQuery) or jQuery element.
 
 You can specify also prefix to match above elements against eg. :
 $("#website_fanpage_url").fbsearch({ prefix: "website" });
